@@ -127,19 +127,19 @@ function Landing(props) {
           <Grid container spacing={32}>
             <Grid item xs={12}>
               <Paper className={classes.contentCard}>
-                <Typography variant="headline">Nous sommes le 33 du Zéphyr, 1337 AE.</Typography>
+                <Typography variant="h5">Nous sommes le 33 du Zéphyr, 1337 AE.</Typography>
               </Paper>
             </Grid>
             <Grid item xs={12} sm={6}>
               <Paper className={classes.contentCard}>
-                <Typography variant="headline">Prochains évènements</Typography>
+                <Typography variant="h5">Prochains évènements</Typography>
 
                 {events && events.map(event => <EventCard event={event} />)}
               </Paper>
             </Grid>
             <Grid item xs={12} sm={6}>
               <Paper className={classes.contentCard}>
-                <Typography variant="headline">Dernières rumeurs</Typography>
+                <Typography variant="h5">Dernières rumeurs</Typography>
 
                 {rumors && rumors.map(rumor => <RumorCard rumor={rumor} />)}
               </Paper>

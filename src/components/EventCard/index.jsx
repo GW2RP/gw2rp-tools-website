@@ -58,7 +58,7 @@ function EventCard(props) {
         title={event.title}
       />}
       <CardContent>
-        <Typography component="p">
+        <Typography variant="body1">
           {event.summary}
         </Typography>
       </CardContent>

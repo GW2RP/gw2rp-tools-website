@@ -44,7 +44,7 @@ function RumorCard(props) {
         }
       />
       <CardContent>
-        <Typography component="p">
+        <Typography variant="body1">
           {rumor.summary}
         </Typography>
       </CardContent>
