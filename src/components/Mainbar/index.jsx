@@ -1,6 +1,6 @@
 import React from "react";
 import { withStyles, AppBar, Button, Hidden, IconButton, Toolbar, Typography } from '@material-ui/core';
-import { Menu as MenuIcon } from "@material-ui/icons";
+import {AccountCircle as AccountCircleIcon, Menu as MenuIcon} from "@material-ui/icons";
 import {Link, NavLink, withRouter} from "react-router-dom";
 
 const styles = theme => ({
@@ -66,9 +66,13 @@ function Mainbar(props) {
             </NavLink>
           </div>
         </Hidden>
-        <Button color="inherit">
-          Compendium
-        </Button>
+        <div>
+          <NavLink to="/compte" className={classes.menuLink} activeClassName={classes.menuLinkActive}>
+            <IconButton color="inherit">
+              <AccountCircleIcon />
+            </IconButton>
+          </NavLink>
+        </div>
       </Toolbar>
     </AppBar>
   );
