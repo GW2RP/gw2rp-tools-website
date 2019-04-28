@@ -11,18 +11,23 @@ const styles = {
     backgroundColor: red[500],
   },
   background: {
-    display: 'flex',
-    flexDirection: 'row',
     background: 'url(https://d3b4yo2b5lbfy.cloudfront.net/wp-content/uploads/2017/07/21ce48.jpg)',
     position: 'fixed',
     top: 0,
     right: 0,
     bottom: 0,
     left: 0,
+    zIndex: -1,
+  },
+  landingContent: {
+    display: 'flex',
+    flexDirection: 'row',
+    height: '93vh',
   },
   content: {
     width: '100%',
-    margin: '32px',
+    overflowY: 'scroll',
+    padding: '32px',
   },
   contentCard: {
     padding: '8px',
@@ -32,11 +37,13 @@ const styles = {
     maxWidth: '400px',
     width: '30%',
     backgroundColor: 'white',
-    padding: '8px',
     display: 'flex',
     justifyContent: 'center',
     flexDirection: 'column',
     alignItems: 'center',
+  },
+  loginForm: {
+    padding: '8px',
   },
   media: {
     height: 0,
@@ -78,6 +85,28 @@ function Landing(props) {
           id: '0976de'
         }
       },
+      {
+        title: 'Soirée du Pichet sans Fond',
+        date: new Date(),
+        summary: 'Le Pichet sans Fond vous accueille pour vous faire découvrir un nouveau format de divertissement : Une aventure dont vous êtes les Héros.',
+        description: '',
+        image: 'https://d3b4yo2b5lbfy.cloudfront.net/wp-content/uploads/2019/01/9e8fa2018-12_LWS4_EP5_ReleaseHub.jpg',
+        author: {
+          name: 'John',
+          id: '0976de'
+        }
+      },
+      {
+        title: 'Soirée du Pichet sans Fond',
+        date: new Date(),
+        summary: 'Le Pichet sans Fond vous accueille pour vous faire découvrir un nouveau format de divertissement : Une aventure dont vous êtes les Héros.',
+        description: '',
+        image: 'https://d3b4yo2b5lbfy.cloudfront.net/wp-content/uploads/2019/01/9e8fa2018-12_LWS4_EP5_ReleaseHub.jpg',
+        author: {
+          name: 'John',
+          id: '0976de'
+        }
+      },
     ]);
   }
 
@@ -87,9 +116,10 @@ function Landing(props) {
 
   return (
     <>
-      <div className={classes.background}>
+      <div className={classes.background} />
+      <div className={classes.landingContent} >
         <div className={classes.content}>
-          <Grid container spacing={24}>
+          <Grid container spacing={32}>
             <Grid item xs={12}>
               <Paper className={classes.contentCard}>
                 <Typography variant="headline">Nous sommes le 33 du Zéphyr, 1337 AE.</Typography>
@@ -114,7 +144,7 @@ function Landing(props) {
         <Paper className={classes.loginBar} elevation={10} square>
           <h1>Connexion</h1>
 
-          <form noValidate autoComplete="off">
+          <form noValidate autoComplete="off" className={classes.loginForm}>
             <TextField
               id="email"
               label="Email"
