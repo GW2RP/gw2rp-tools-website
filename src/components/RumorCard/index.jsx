@@ -3,7 +3,6 @@ import {Card, CardContent, CardHeader, Typography, withStyles} from '@material-u
 import IconButton from "@material-ui/core/IconButton";
 import { MoreVert as MoreVertIcon } from "@material-ui/icons";
 import Avatar from "@material-ui/core/Avatar";
-import CardMedia from "@material-ui/core/CardMedia";
 import {red} from "@material-ui/core/colors";
 import {Link} from "react-router-dom";
 

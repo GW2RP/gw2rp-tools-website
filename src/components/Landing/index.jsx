@@ -70,6 +70,7 @@ function Landing(props) {
   async function loadEvents() {
     setEvents([
       {
+        id: '576d-ef',
         title: 'Soirée du Pichet sans Fond',
         date: new Date(),
         summary: 'Le Pichet sans Fond vous accueille pour vous faire découvrir un nouveau format de divertissement : Une aventure dont vous êtes les Héros.',
@@ -81,6 +82,7 @@ function Landing(props) {
         }
       },
       {
+        id: '476d-ab',
         title: 'Soirée du Pichet sans Fond',
         date: new Date(),
         summary: 'Le Pichet sans Fond vous accueille pour vous faire découvrir un nouveau format de divertissement : Une aventure dont vous êtes les Héros.',
@@ -91,17 +93,7 @@ function Landing(props) {
         }
       },
       {
-        title: 'Soirée du Pichet sans Fond',
-        date: new Date(),
-        summary: 'Le Pichet sans Fond vous accueille pour vous faire découvrir un nouveau format de divertissement : Une aventure dont vous êtes les Héros.',
-        description: '',
-        image: 'https://d3b4yo2b5lbfy.cloudfront.net/wp-content/uploads/2019/01/9e8fa2018-12_LWS4_EP5_ReleaseHub.jpg',
-        author: {
-          name: 'John',
-          id: '0976de'
-        }
-      },
-      {
+        id: '236d-aa',
         title: 'Soirée du Pichet sans Fond',
         date: new Date(),
         summary: 'Le Pichet sans Fond vous accueille pour vous faire découvrir un nouveau format de divertissement : Une aventure dont vous êtes les Héros.',
@@ -134,14 +126,14 @@ function Landing(props) {
               <Paper className={classes.contentCard}>
                 <Typography variant="h5">Prochains évènements</Typography>
 
-                {events && events.map(event => <EventCard event={event} />)}
+                {events && events.map(event => <EventCard key={event.id} event={event} />)}
               </Paper>
             </Grid>
             <Grid item xs={12} sm={6}>
               <Paper className={classes.contentCard}>
                 <Typography variant="h5">Dernières rumeurs</Typography>
 
-                {rumors && rumors.map(rumor => <RumorCard rumor={rumor} />)}
+                {rumors && rumors.map(rumor => <RumorCard key={rumor.id} rumor={rumor} />)}
               </Paper>
             </Grid>
           </Grid>

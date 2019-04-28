@@ -10,8 +10,8 @@ function App() {
   return (
     <>
       <MuiThemeProvider theme={theme}>
-        <Mainbar />
         <Router>
+          <Mainbar />
           <Switch>
             <Route exact path="/">
               <Landing />
