@@ -1,12 +1,12 @@
 import React from "react";
-import {Grid, Typography, withStyles} from '@material-ui/core';
+import {Grid, Hidden, Typography, withStyles} from '@material-ui/core';
 import Paper from "@material-ui/core/Paper";
 import TextField from "@material-ui/core/TextField";
 import {red} from "@material-ui/core/colors";
 import EventCard from "../EventCard";
 import RumorCard from "../RumorCard";
 
-const styles = {
+const styles = theme => ({
   avatar: {
     backgroundColor: red[500],
   },
@@ -27,7 +27,12 @@ const styles = {
   content: {
     width: '100%',
     overflowY: 'scroll',
-    padding: '32px',
+    [theme.breakpoints.down('sm')]: {
+      padding: '8px',
+    },
+    [theme.breakpoints.up('md')]: {
+      padding: '32px',
+    },
   },
   contentCard: {
     padding: '8px',
@@ -49,7 +54,7 @@ const styles = {
     height: 0,
     paddingTop: '20%',
   },
-};
+});
 
 function Landing(props) {
   const { classes } = props;
@@ -141,27 +146,29 @@ function Landing(props) {
             </Grid>
           </Grid>
         </div>
-        <Paper className={classes.loginBar} elevation={10} square>
-          <h1>Connexion</h1>
+        <Hidden mdDown>
+          <Paper className={classes.loginBar} elevation={10} square>
+            <h1>Connexion</h1>
 
-          <form noValidate autoComplete="off" className={classes.loginForm}>
-            <TextField
-              id="email"
-              label="Email"
-              margin="normal"
-              variant="outlined"
-              fullWidth
-            />
+            <form noValidate autoComplete="off" className={classes.loginForm}>
+              <TextField
+                id="email"
+                label="Email"
+                margin="normal"
+                variant="outlined"
+                fullWidth
+              />
 
-            <TextField
-              id="password"
-              label="Mot de Passe"
-              margin="normal"
-              variant="outlined"
-              fullWidth
-            />
-          </form>
-        </Paper>
+              <TextField
+                id="password"
+                label="Mot de Passe"
+                margin="normal"
+                variant="outlined"
+                fullWidth
+              />
+            </form>
+          </Paper>
+        </Hidden>
       </div>
     </>
   );
