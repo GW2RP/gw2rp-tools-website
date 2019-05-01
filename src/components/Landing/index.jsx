@@ -1,10 +1,10 @@
 import React from "react";
 import {Grid, Hidden, Typography, withStyles} from '@material-ui/core';
 import Paper from "@material-ui/core/Paper";
-import TextField from "@material-ui/core/TextField";
 import {red} from "@material-ui/core/colors";
 import EventCard from "../EventCard";
 import RumorCard from "../RumorCard";
+import LogInForm from "../LogInForm";
 
 const styles = theme => ({
   avatar: {
@@ -46,9 +46,6 @@ const styles = theme => ({
     justifyContent: 'center',
     flexDirection: 'column',
     alignItems: 'center',
-  },
-  loginForm: {
-    padding: '8px',
   },
   media: {
     height: 0,
@@ -140,25 +137,7 @@ function Landing(props) {
         </div>
         <Hidden mdDown>
           <Paper className={classes.loginBar} elevation={10} square>
-            <h1>Connexion</h1>
-
-            <form noValidate autoComplete="off" className={classes.loginForm}>
-              <TextField
-                id="email"
-                label="Email"
-                margin="normal"
-                variant="outlined"
-                fullWidth
-              />
-
-              <TextField
-                id="password"
-                label="Mot de Passe"
-                margin="normal"
-                variant="outlined"
-                fullWidth
-              />
-            </form>
+            <LogInForm />
           </Paper>
         </Hidden>
       </div>

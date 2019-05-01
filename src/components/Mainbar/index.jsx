@@ -1,5 +1,5 @@
 import React from "react";
-import { withStyles, AppBar, Button, Hidden, IconButton, Toolbar, Typography } from '@material-ui/core';
+import {withStyles, AppBar, Button, Hidden, IconButton, Toolbar, Typography} from '@material-ui/core';
 import {AccountCircle as AccountCircleIcon, Menu as MenuIcon} from "@material-ui/icons";
 import {Link, NavLink, withRouter} from "react-router-dom";
 
@@ -27,14 +27,16 @@ const styles = theme => ({
 });
 
 function Mainbar(props) {
-  const { classes } = props;
+  const {classes} = props;
+
+  const connected = false;
 
   return (
     <AppBar position="static">
       <Toolbar>
         <Hidden mdUp>
           <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-            <MenuIcon />
+            <MenuIcon/>
           </IconButton>
         </Hidden>
         <Link to="/" className={classes.mainTitle}>
@@ -67,11 +69,17 @@ function Mainbar(props) {
           </div>
         </Hidden>
         <div>
-          <NavLink to="/compte" className={classes.menuLink} activeClassName={classes.menuLinkActive}>
-            <IconButton color="inherit">
-              <AccountCircleIcon />
-            </IconButton>
-          </NavLink>
+          {connected ? (
+            <NavLink to="/compte" className={classes.menuLink} activeClassName={classes.menuLinkActive}>
+              <IconButton color="inherit">
+                <AccountCircleIcon/>
+              </IconButton>
+            </NavLink>
+          ) : (
+            <NavLink to="/connexion" className={classes.menuLink} activeClassName={classes.menuLinkActive}>
+              <Button color="inherit" variant="outlined">Connexion</Button>
+            </NavLink>
+          )}
         </div>
       </Toolbar>
     </AppBar>
